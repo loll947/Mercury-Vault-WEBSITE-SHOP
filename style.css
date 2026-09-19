@@ -684,3 +684,19 @@ footer a:hover {
         font-size: 35px;
     }
 }
+/* ROBUX PRICES */
+
+.robux-price {
+    margin: 18px 0 12px;
+    color: #9b72ff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.robux-price span {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
