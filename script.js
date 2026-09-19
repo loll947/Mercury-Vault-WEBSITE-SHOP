@@ -1,28 +1,28 @@
-const DISCORD_TICKET =
-  "https://discord.com/channels/1548817819200786443/1548824734744191036";
+// Mercury Vault
+// Main website script
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("Mercury Vault loaded successfully.");
 
-  console.log("Mercury Vault loaded.");
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+            const targetId = link.getAttribute("href");
 
-  document
-    .querySelectorAll(
-      "[data-discord], .buy-btn, .package-btn, .discord-btn"
-    )
-    .forEach((button) => {
+            if (!targetId || targetId === "#") {
+                return;
+            }
 
-      button.addEventListener("click", (event) => {
+            const target = document.querySelector(targetId);
 
-        if (button.tagName === "A") {
-          return;
-        }
+            if (target) {
+                event.preventDefault();
 
-        event.preventDefault();
-
-        window.location.href = DISCORD_TICKET;
-
-      });
-
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
     });
-
 });
