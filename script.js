@@ -1,16 +1,28 @@
-// Mercury Vault
-// Main website scripts
-
-const discordTicket =
-    "https://discord.com/channels/1548817819200786443/1548824734744191036";
+const DISCORD_TICKET =
+  "https://discord.com/channels/1548817819200786443/1548824734744191036";
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Mercury Vault loaded.");
 
-    // All order and purchase buttons open the Discord ticket.
-    document.querySelectorAll(".buy-btn, .package-btn").forEach((button) => {
-        button.setAttribute("href", discordTicket);
-        button.setAttribute("target", "_blank");
-        button.setAttribute("rel", "noopener noreferrer");
+  console.log("Mercury Vault loaded.");
+
+  document
+    .querySelectorAll(
+      "[data-discord], .buy-btn, .package-btn, .discord-btn"
+    )
+    .forEach((button) => {
+
+      button.addEventListener("click", (event) => {
+
+        if (button.tagName === "A") {
+          return;
+        }
+
+        event.preventDefault();
+
+        window.location.href = DISCORD_TICKET;
+
+      });
+
     });
+
 });
