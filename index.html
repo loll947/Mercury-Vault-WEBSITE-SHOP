@@ -1,35 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<title>Mercury Vault</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="./style.css">
+    <title>Mercury Vault</title>
 
-<style>
-:root{
-  --bg:#050505;
-  --card:#0b0b0b;
-  --border:#222;
-  --purple:#8b5cf6;
-  --purple2:#a78bfa;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+        body {
+            margin: 0;
+            background: #050505;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
 
-html{
-  scroll-behavior:smooth;
-}
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
 
-body{
-  font-family:Georgia,"Times New Roman",serif;
-  background:var(--bg);
-  color:#fff;
-  min-width:0;
-  overflow
+        h1 {
+            font-size: 55px;
+            margin: 0 0 20px;
+        }
+
+        h1 span {
+            color: #8b5cf6;
+        }
+
+        p {
+            color: #888;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 15px 25px;
+            background: #8b5cf6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            MERCURY <span>VAULT</span>
+        </h1>
+
+        <p>
+            Mercury Vault is working.
+        </p>
+
+        <a href="https://discord.com/channels/1548817819200786443/1548824734744191036">
+            Open Discord
+        </a>
+
+    </div>
+
+</body>
+</html>
