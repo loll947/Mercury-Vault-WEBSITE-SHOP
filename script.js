@@ -1,23 +1,29 @@
-function login() {
-    alert("Login system coming soon.");
-}
+// Mercury Vault
+// Main website scripts
 
 
-function buyProduct(product) {
-    alert(
-        "You selected " +
-        product +
-        ". Checkout system coming soon."
-    );
-}
+const discordTicket =
+    "https://discord.com/channels/1548817819200786443/1548824734744191036";
 
 
-document.querySelectorAll("nav a").forEach(function(link) {
+// Add a small console message when the website loads.
 
-    link.addEventListener("click", function() {
+document.addEventListener("DOMContentLoaded", () => {
 
-        console.log(
-            "Navigating to " + link.getAttribute("href")
+    console.log("Mercury Vault loaded.");
+
+});
+
+
+// Make sure order buttons always use the correct Discord ticket.
+
+document.querySelectorAll(".buy-btn, .package-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        button.setAttribute(
+            "href",
+            discordTicket
         );
 
     });
