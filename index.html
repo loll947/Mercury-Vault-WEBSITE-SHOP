@@ -3,12 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mercury Vault</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 
-html{scroll-behavior:smooth}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     background:#07070a;
@@ -22,19 +30,31 @@ a{
     text-decoration:none;
 }
 
+
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar{
     position:sticky;
     top:0;
     z-index:10;
+
     background:rgba(7,7,10,.95);
+
     border-bottom:1px solid #292932;
+
+    backdrop-filter:blur(10px);
 }
 
 .nav{
     width:92%;
     max-width:1150px;
+
     min-height:70px;
+
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -52,26 +72,49 @@ nav{
 
 nav a{
     color:#aaa;
+
     font-family:Arial,sans-serif;
     font-size:14px;
 }
 
+nav a:hover{
+    color:white;
+}
+
 .discord{
     background:#8952ed;
+
     padding:11px 18px;
+
     border-radius:8px;
+
     font-family:Arial,sans-serif;
     font-weight:bold;
+    font-size:14px;
 }
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:600px;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+
     padding:80px 20px;
-    background:radial-gradient(circle,rgba(137,82,237,.18),transparent 60%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(137,82,237,.18),
+            transparent 60%
+        );
 }
 
 .hero-content{
@@ -80,41 +123,62 @@ nav a{
 
 .eyebrow{
     color:#9b6cff;
+
     letter-spacing:4px;
+
     font:bold 12px Arial,sans-serif;
 }
 
-h1{
+.hero h1{
     margin-top:18px;
+
     font-size:clamp(50px,9vw,90px);
+
     line-height:1;
 }
 
-h1 span{
+.hero h1 span{
     color:#9b6cff;
 }
 
 .hero p{
     color:#999;
+
     font:18px Arial,sans-serif;
+
     margin:25px auto;
+
     max-width:600px;
 }
 
 .buttons{
     display:flex;
+
     justify-content:center;
+
     gap:14px;
 }
 
 .button{
     display:inline-flex;
+
     justify-content:center;
     align-items:center;
+
     min-height:48px;
+
     padding:0 25px;
+
     border-radius:8px;
+
     font:bold 14px Arial,sans-serif;
+
+    transition:.2s;
+}
+
+.button:hover,
+.buy:hover{
+    transform:translateY(-2px);
 }
 
 .primary{
@@ -125,428 +189,90 @@ h1 span{
     border:1px solid #444;
 }
 
+
+/* =========================
+   SECTIONS
+========================= */
+
 .section{
     width:92%;
+
     max-width:1150px;
+
     margin:auto;
+
     padding:90px 0;
 }
 
 .title{
     text-align:center;
+
     margin-bottom:50px;
 }
 
 .title span{
     color:#9b6cff;
+
     letter-spacing:4px;
+
     font:bold 12px Arial,sans-serif;
 }
 
 .title h2{
     font-size:50px;
+
     margin-top:10px;
 }
 
 .title p{
     color:#888;
+
     font-family:Arial,sans-serif;
+
+    margin-top:8px;
 }
+
+
+/* =========================
+   CARDS
+========================= */
 
 .grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:20px;
 }
 
 .card{
     background:#0e0e13;
+
     border:1px solid #292932;
+
     border-radius:14px;
+
     padding:28px;
+
+    transition:.2s;
 }
 
-.card h3{
-    font-size:25px;
-    margin:15px 0 10px;
-}
-
-.card p{
-    color:#999;
-    font-family:Arial,sans-serif;
-    font-size:14px;
-}
-
-.card-link{
-    display:block;
-    color:#9b6cff;
-    font:bold 14px Arial,sans-serif;
-    margin-top:25px;
-}
-
-.package{
-    min-height:500px;
-    display:flex;
-    flex-direction:column;
-}
-
-.featured{
+.card:hover{
     border-color:#8952ed;
 }
 
-.label{
-    color:#9b6cff;
-    font:bold 12px Arial,sans-serif;
-    letter-spacing:3px;
-}
 
-.price{
-    margin:20px 0;
+/* =========================
+   SERVICES
+========================= */
+
+.service-icon{
+    width:50px;
+    height:50px;
+
     display:flex;
-    align-items:baseline;
-    gap:8px;
-}
 
-.price strong{
-    font:bold 50px Arial,sans-serif;
-}
+    align-items:center;
+    justify-content:center;
 
-.price span{
-    color:#9b6cff;
-    font:bold 13px Arial,sans-serif;
-}
-
-.package ul{
-    list-style:none;
-    margin:20px 0;
-    font:14px Arial,sans-serif;
-    color:#bbb;
-}
-
-.package li{
-    margin:10px 0;
-}
-
-.buy{
-    display:block;
-    margin-top:auto;
-    padding:15px;
-    text-align:center;
-    background:#8952ed;
-    border-radius:8px;
-    font:bold 14px Arial,sans-serif;
-}
-
-.faq{
-    margin-bottom:20px;
-}
-
-.cta{
-    width:92%;
-    max-width:900px;
-    margin:30px auto 90px;
-    padding:70px 20px;
-    text-align:center;
-    border:1px solid #292932;
-    border-radius:18px;
-    background:radial-gradient(circle,rgba(137,82,237,.18),transparent 65%);
-}
-
-.cta h2{
-    font-size:45px;
-}
-
-.cta p{
-    color:#999;
-    font-family:Arial,sans-serif;
-    margin:15px 0 25px;
-}
-
-footer{
-    text-align:center;
-    padding:35px;
-    border-top:1px solid #292932;
-    font-family:Arial,sans-serif;
-}
-
-footer p{
-    color:#666;
-    font-size:13px;
-    margin-top:7px;
-}
-
-@media(max-width:800px){
-    nav{display:none}
-
-    .hero{
-        min-height:540px;
-        padding:70px 15px;
-    }
-
-    .hero h1{
-        font-size:52px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .buttons{
-        flex-direction:column;
-    }
-
-    .button{
-        width:100%;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .section{
-        padding:70px 0;
-    }
-
-    .title h2{
-        font-size:40px;
-    }
-
-    .discord{
-        padding:9px 13px;
-        font-size:12px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header class="navbar">
-<div class="nav">
-    <a href="#" class="logo">Mercury Vault</a>
-
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#packages">Packages</a>
-        <a href="#faq">FAQ</a>
-    </nav>
-
-    <a class="discord"
-       href="https://discord.com/channels/1548817819200786443/1548824734744191036"
-       target="_blank">
-       Discord
-    </a>
-</div>
-</header>
-
-<section class="hero">
-<div class="hero-content">
-
-    <div class="eyebrow">MERCURY VAULT</div>
-
-    <h1>
-        Build Something<br>
-        <span>Better.</span>
-    </h1>
-
-    <p>
-        Premium Discord bots, websites and custom digital solutions.
-    </p>
-
-    <div class="buttons">
-        <a href="#services" class="button primary">Explore Services</a>
-
-        <a href="https://discord.com/channels/1548817819200786443/1548824734744191036"
-           target="_blank"
-           class="button secondary">
-           Contact Us
-        </a>
-    </div>
-
-</div>
-</section>
-
-<section id="services" class="section">
-
-<div class="title">
-    <span>WHAT WE OFFER</span>
-    <h2>Our Services</h2>
-    <p>Everything you need to build and grow your project.</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-    <div>🤖</div>
-    <h3>Discord Bots</h3>
-    <p>Custom Discord bots with moderation, tickets, verification, logging and more.</p>
-
-    <a class="card-link"
-       href="https://discord.com/channels/1548817819200786443/1548824734744191036"
-       target="_blank">
-       Order Now →
-    </a>
-</div>
-
-<div class="card">
-    <div>🌐</div>
-    <h3>Websites</h3>
-    <p>Modern responsive websites designed for your brand, community or business.</p>
-
-    <a class="card-link"
-       href="https://discord.com/channels/1548817819200786443/1548824734744191036"
-       target="_blank">
-       Order Now →
-    </a>
-</div>
-
-<div class="card">
-    <div>⚙️</div>
-    <h3>Custom Solutions</h3>
-    <p>Need something specific? We build custom solutions around your requirements.</p>
-
-    <a class="card-link"
-       href="https://discord.com/channels/1548817819200786443/1548824734744191036"
-       target="_blank">
-       Contact Us →
-    </a>
-</div>
-
-</div>
-</section>
-
-<section id="packages" class="section">
-
-<div class="title">
-    <span>PACKAGES</span>
-    <h2>Choose Your Plan</h2>
-    <p>Purchase your package with Robux.</p>
-</div>
-
-<div class="grid">
-
-<div class="card package">
-    <div class="label">BASIC</div>
-    <h3>Starter</h3>
-
-    <div class="price">
-        <strong>5</strong>
-        <span>ROBUX</span>
-    </div>
-
-    <p>A simple solution to get your project started.</p>
-
-    <ul>
-        <li>✓ Basic setup</li>
-        <li>✓ Essential features</li>
-        <li>✓ Configuration</li>
-        <li>✓ Support</li>
-    </ul>
-
-    <a class="buy"
-       href="https://www.roblox.com/es/game-pass/1618913362/5-ROBUX"
-       target="_blank">
-       Buy Basic
-    </a>
-</div>
-
-
-<div class="card package featured">
-    <div class="label">STANDARD</div>
-    <h3>Professional</h3>
-
-    <div class="price">
-        <strong>15</strong>
-        <span>ROBUX</span>
-    </div>
-
-    <p>More features and customization for serious projects.</p>
-
-    <ul>
-        <li>✓ Everything in Basic</li>
-        <li>✓ More features</li>
-        <li>✓ Custom configuration</li>
-        <li>✓ Priority support</li>
-    </ul>
-
-    <a class="buy"
-       href="https://www.roblox.com/es/game-pass/1244405285/15-ROBUX"
-       target="_blank">
-       Buy Standard
-    </a>
-</div>
-
-
-<div class="card package">
-    <div class="label">PREMIUM</div>
-    <h3>Ultimate</h3>
-
-    <div class="price">
-        <strong>35</strong>
-        <span>ROBUX</span>
-    </div>
-
-    <p>A complete custom solution built around your needs.</p>
-
-    <ul>
-        <li>✓ Everything in Standard</li>
-        <li>✓ Advanced features</li>
-        <li>✓ Full customization</li>
-        <li>✓ Premium support</li>
-    </ul>
-
-    <a class="buy"
-       href="https://www.roblox.com/es/game-pass/1258666193/35-ROBUX"
-       target="_blank">
-       Buy Premium
-    </a>
-</div>
-
-</div>
-</section>
-
-<section id="faq" class="section">
-
-<div class="title">
-    <span>FAQ</span>
-    <h2>Frequently Asked Questions</h2>
-</div>
-
-<div class="grid">
-
-<div class="card faq">
-    <h3>How do I purchase?</h3>
-    <p>Choose a package and press its Buy button. You will be taken to Roblox.</p>
-</div>
-
-<div class="card faq">
-    <h3>How do I contact Mercury Vault?</h3>
-    <p>Use the Discord button to contact us and open a ticket.</p>
-</div>
-
-<div class="card faq">
-    <h3>Are prices in Robux?</h3>
-    <p>Yes. All packages displayed above use Robux.</p>
-</div>
-
-</div>
-</section>
-
-<section class="cta">
-    <h2>Need Something Custom?</h2>
-    <p>Contact Mercury Vault through Discord.</p>
-
-    <a class="button primary"
-       href="https://discord.com/channels/1548817819200786443/1548824734744191036"
-       target="_blank">
-       Open Discord
-    </a>
-</section>
-
-<footer>
-    <strong>Mercury Vault</strong>
-    <p>© 2026 Mercury Vault. All rights reserved.</p>
-</footer>
-
-</body>
-</html>
+    background:#181
